@@ -33,9 +33,9 @@ def write():
     uniquement la fonction write et 'database' pour te simplifier la tache
     
     Etapes de la fonction :
-        -> Demander à l'utilisateur un nom et un numéro de téléphone
-        -> Chercher le dernier indice de 'database' (3)
-        -> Ajouter le nom et le numéro à l'indice correspondant (4)
+        -> Demander à l'utilisateur un nom et un numéro de téléphone (stocké dans des variables)
+        -> Chercher le dernier indice de 'database' (attention aux types (int VS str))
+        -> Ajouter le nom et le numéro dans le dictionnaire à l'indice correspondant (exemple : "4":["Jonny", "+3321436587"]) )
     """
     cles = list(database.keys())
     cles[-1]
