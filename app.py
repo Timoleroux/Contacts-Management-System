@@ -1,6 +1,14 @@
 from prettytable import PrettyTable
+import json, os
 
-database = {1:["Bernard", "+33612345678"], 2:["François", "+33687654321"], 3:["Elise", "+33669696969"]}
+CUR_PATH = os.path.abspath(os.getcwd()) # Path of the current directory
+DB_PATH = CUR_PATH + "\\repertoire.json" # Path of the database
+# Load 'repertoire.json' in the variable 'database'
+with open(DB_PATH, "r") as f: 
+    database = json.load(f)
+
+# Base de donnée pour les tests :
+database = {"1":["Bernard", "+33612345678"], "2":["François", "+33687654321"], "3":["Elise", "+33669696969"]}
 
 def choice():
     question = """
@@ -14,13 +22,10 @@ def choice():
 +------------------------------------------+
 >> """
     answer =  input(question)
-    try:
-        answer = int(answer) # Convertir 'answer' au bon type
-        if not(0 <= answer <=4): # Vérifie que 'answer' est compris entre 0 et 4
-            raise TypeError
-    except Exception:
-        exit("/!\\ Vous ne pouvez que écrire 0, 1, 2, 3 ou 4")
-    return answer
+    while answer not in ["0", "1", "2", "3", "4"]:
+        print("/!\\ Vous ne pouvez que écrire 0, 1, 2, 3 ou 4.")
+        answer = input(">> ")
+    return int(answer)
 
 def write():
     """
@@ -50,35 +55,43 @@ def find():
 +------------------------------------+
 >> """
     answer =  input(question)
-    try:
-        answer = int(answer)
-        if answer not in [0, 1, 2]:
-            raise TypeError
-    except Exception:
-        exit("/!\\ Vous ne pouvez que écrire 0, 1 ou 2")
-    
-    if answer == 1:
-        # Vérifie si le numéro recherché est associé à un nom
-        num = input("Entrez le numéro de téléphone (Ex: +33612345678)\n    >> ")
-        for key in database.keys():
-            if database[key][1] == num:
-                print(f"Le numéro de téléphone {num} appartient à {database[key][0]}.")
-                return database[key][0]
-        print(f"Le numéro {num} n'est pas attribué.")
-    elif answer == 2:
-        # Vérifie si le nom recherché est associé à un numéro
-        name = input("Entrez le prénom (Ex: Didier)\n    >> ")
-        for key in database.keys():
-            if database[key][0].lower() == name.lower():
-                print(f"Le numéro de téléphone de {name} est {database[key][1]}.")
-                return database[key][1]
-        print(f"Aucun numéro trouvé pour {name}.")
+    while answer not in ["0", "1", "2"]:
+        print("/!\\ Vous ne pouvez que écrire 0, 1 ou 2.")
+        answer = input(">> ")
+        if answer == "0":
+            return False
+
+    # Vérifie si le numéro recherché est associé à un nom
+    if answer == "1":
+        look_for = input("Entrez un numéro de téléphone (Ex: +33612345678)\n>> ")
+        identifier = 1
+    elif answer == "2":
+        look_for = input("Entrez un nom (Ex: Didier)\n>> ")
+        identifier = 0
+    else:
+        return False
+
+    if elements := [ # Crée une liste contenant noms & numéros si 'look_for' est contenu dans un numéro ou un nom
+            (database[key][0], database[key][1])
+            for key in database.keys()
+            if look_for.lower() in database[key][identifier].lower()
+        ]:
+        # Affiche le tableau avec le(s) numéro(s)
+        table = PrettyTable(align="l")
+        table.field_names = ["Nom", "Numéro de tél."]
+        for element in elements:
+            table.add_row([element[0], element[1]])
+        print(table)
+    else:
+        # Si la liste est vide :
+        print("Aucun résultat trouvé.")
+    return True
 
 def display():
     table = PrettyTable(align="l")
-    table.field_names = ["Nom", "Numéro de tél."]
+    table.field_names = ["ID", "Nom", "Numéro de tél."]
     for key in database.keys():
-        table.add_row([database[key][0], database[key][1]])
+        table.add_row([key, database[key][0], database[key][1]])
     print(table)
 
 def international():
@@ -91,11 +104,11 @@ def main():
         if user_choice == 1:
             write()
         elif user_choice == 2:
-            find()
+            loop = True
+            while loop:
+                loop = find()
         elif user_choice == 3:
             display()
-
-    print("Programme arrêté.")
 
 if __name__ == "__main__":
     main()
