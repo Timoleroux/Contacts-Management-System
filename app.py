@@ -12,7 +12,12 @@ def choice():
     return int(input(question))
 
 def write():
-    pass
+    cles = list(database.keys())
+    cles[-1]
+    cles_1=cles[-1]+1
+    print(cles_1)
+    question= input("ajouter le prenom")
+    question2=input("ajouter le numero")
 
 def find():
     pass
