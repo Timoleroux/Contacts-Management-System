@@ -1,7 +1,7 @@
 from names import get_first_name
 from string import ascii_uppercase
 from random import randint, choice
-from ressources import DB_PATH, writeJsonFile
+from utils import DB_PATH, writeJsonFile
 
 
 def databaseGenerator(database_path: str, iteration: int):

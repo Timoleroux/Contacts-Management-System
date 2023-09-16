@@ -1,167 +1,117 @@
-<div align="center">
-<h1 align="center">
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
-<br>mini-projet-dictionnaire
-</h1>
-<h3>◦ Developed with the software and tools listed below.</h3>
+# Contacts Management System
 
-<p align="center">
-<img src="https://img.shields.io/badge/Python-3776AB.svg?style&logo=Python&logoColor=white" alt="Python" />
-<img src="https://img.shields.io/badge/JSON-000000.svg?style&logo=JSON&logoColor=white" alt="JSON" />
-</p>
-<img src="https://img.shields.io/github/languages/top/mini-projet-dictionnaire?style&color=5D6D7E" alt="GitHub top language" />
-<img src="https://img.shields.io/github/languages/code-size/mini-projet-dictionnaire?style&color=5D6D7E" alt="GitHub code size in bytes" />
-<img src="https://img.shields.io/github/commit-activity/m/mini-projet-dictionnaire?style&color=5D6D7E" alt="GitHub commit activity" />
-<img src="https://img.shields.io/github/license/mini-projet-dictionnaire?style&color=5D6D7E" alt="GitHub license" />
-</div>
+Vous ne parlez pas anglais ? La traduction en français se trouve [ici](#contacts-management-system).
 
----
+This repository contains a set of Python scripts for managing a directory of contacts. These scripts provide various functionalities for adding, searching, displaying, and copying contact information. The directory is stored as a JSON file, and you can interact with it using both a graphical user interface (GUI) application and a console-based application.
 
-## 📒 Table of Contents
-- [📒 Table of Contents](#-table-of-contents)
-- [📍 Overview](#-overview)
-- [⚙️ Features](#️-features)
-- [📂 Project Structure](#-project-structure)
-- [🧩 Modules](#-modules)
-- [🚀 Getting Started](#-getting-started)
-  - [✔️ Prerequisites](#️-prerequisites)
-  - [📦 Installation](#-installation)
-  - [🎮 Using mini-projet-dictionnaire](#-using-mini-projet-dictionnaire)
-  - [🧪 Running Tests](#-running-tests)
-- [🗺 Roadmap](#-roadmap)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [👏 Acknowledgments](#-acknowledgments)
+## 🖥️ Scripts
 
----
+### `main.py`
 
+- This script creates a GUI application for managing contacts. It allows you to search for contacts, view contact details, copy phone numbers, add new contacts, and delete existing contacts.
 
-## 📍 Overview
+### `consoleApp.py`
 
-The core functionality of this project is to provide a directory management tool, allowing the user to add, search, display, and copy phone numbers stored in a JSON file. It aims to simplify and streamline the process of managing and accessing contact information. By providing an intuitive user interface and automation features, this project offers convenience and efficiency for users in managing their contact directory.
+- This script offers a console-based interface for managing contacts. You can perform actions such as adding contacts, searching for contacts, displaying the entire directory, and copying phone numbers.
 
----
+### `generator.py`
 
-## ⚙️ Features
+- Use this script to generate random contact data for testing purposes. It populates the contact directory with random names and phone numbers, allowing you to test the functionality of the other scripts.
 
-| Feature                | Description                           |
-| ---------------------- | ------------------------------------- |
-| ⚙️ Architecture     | The codebase follows a modular and object-oriented design pattern, separating the directory management tool, JSON database generator, and contact directory application into different components. Each component has distinct responsibilities and can be easily maintained or extended. |
-| 📖 Documentation   | The codebase has comprehensive documentation that provides explanations of each file's purpose, functional descriptions of the core functionalities, and usage examples. The documentation allows developers to easily understand and contribute to the project. |
-| 🔗 Dependencies    | The system relies on PySide6 for developing the contact directory application's user interface and PrettyTable for formatting tables in the directory management tool. Pyperclip is used for copying phone numbers to the clipboard. |
-| 🧩 Modularity      | The codebase demonstrates good modularity by separating concerns into different files and functions. This allows for easier code maintenance, debugging, and reusability of components. Components like loading/writing JSON files, formatting dictionaries, and converting phone numbers are reusable across different parts of the application. |
-| ✔️ Testing          | The testing strategies and tools used in the codebase are not specified in the provided information. It is recommended to investigate the repository for any existing testing frameworks or manually implemented tests to evaluate the testing approach comprehensiveness. |
-| ⚡️ Performance      | Given the provided information only, there isn't enough information to specifically analyze the system's performance in terms of speed, efficiency, and resource usage. It is advisable to identify if any potential bottlenecks or performance-critical areas exist and assess them directly. |
-| 🔐 Security        | The provided information does not explicitly mention any security measures used by the system. It would be necessary to examine the actual source code and data handling procedures to evaluate the security measures employed by the application. |
-| 🔀 Version Control | The codebase utilizes Git for version control. Git enables efficient collaboration and tracking of changes across the project's different files. Branching and merging capabilities can be used to manage feature development and ensure code integrity. |
-| 🔌 Integrations    | The system does not seem to have any specific mentioned integrations with external systems or services in the provided information. However, given the modularity and flexibility of the project structure, it can be extended to integrate with other systems easily. |
-| 📶 Scalability     | The provided information does not provide insight into how the system handles growth. It would be beneficial to assess the codebase's scalability considering factors such as database performance, concurrent access, and code optimization as the size of the directory or the number of users increases. |
+### `utils.py`
 
----
+- This module contains utility functions used by the other scripts, including functions for loading and saving contact data, formatting phone numbers, and more.
 
+### `/data/repertoire.json`
 
-## 📂 Project Structure
+- This JSON file represents the contact directory and contains sample contact data. You can replace this file with your own data or use it as a starting point for managing your contacts.
 
+## 🏁 Getting Started
 
+To use these scripts, follow these steps:
 
+1. Ensure you have Python (at least v.3.8) installed on your system. You can download it from [Python's official website](https://www.python.org/downloads/).
 
----
+2. Install the required Python packages by running the following command in your terminal:
 
-## 🧩 Modules
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-<details closed><summary>Root</summary>
+3. Clone or download this repository to your local machine.
 
-| File                                                                                      | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| ---                                                                                       | ---                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| [console_app.py](https://github.com/mini-projet-dictionnaire/blob/main/console_app.py)    | This code is a directory management tool. It allows the user to add, search, display, and copy phone numbers stored in a JSON file. It uses PrettyTable for table formatting and Pyperclip for copying phone numbers to the clipboard. The core functionalities include adding entries to the directory, searching for entries by name or phone number, displaying the directory contents, and copying phone numbers to the clipboard. |
-| [generator.py](https://github.com/mini-projet-dictionnaire/blob/main/apps\generator.py)   | The code generates a JSON database file with random names and phone numbers. It prompts for confirmation to delete the existing content and then generates and updates the database with the specified number of items.                                                                                                                                                                                                                |
-| [main.py](https://github.com/mini-projet-dictionnaire/blob/main/apps\main.py)             | This code creates a contact directory application using PySide6. It allows users to search, add, delete, and copy phone numbers. The application loads data from a JSON database and updates the user interface accordingly.                                                                                                                                                                                                           |
-| [ressources.py](https://github.com/mini-projet-dictionnaire/blob/main/apps\ressources.py) | This code provides functionalities for loading and writing JSON files, formatting dictionaries, and converting phone numbers between French and international formats.                                                                                                                                                                                                                                                                 |
+4. Run the scripts based on your preference:
 
-</details>
+   - If you prefer a graphical interface, run `main.py` to open the GUI application.
 
----
+   - If you prefer a console-based interface, run `consoleApp.py` to interact with the contacts using text commands.
 
-## 🚀 Getting Started
+   - You can also use `generator.py` to populate the contact directory with random data.
 
-### ✔️ Prerequisites
+## ⚠️ Important Notes
 
-Before you begin, ensure that you have the following prerequisites installed:
-> - `ℹ️ Requirement 1`
-> - `ℹ️ Requirement 2`
-> - `ℹ️ ...`
-
-### 📦 Installation
-
-1. Clone the mini-projet-dictionnaire repository:
-```sh
-git clone C:/Users/timol/Documents/GitHub/mini-projet-dictionnaire
-```
-
-2. Change to the project directory:
-```sh
-cd mini-projet-dictionnaire
-```
-
-3. Install the dependencies:
-```sh
-pip install -r requirements.txt
-```
-
-### 🎮 Using mini-projet-dictionnaire
-
-```sh
-python main.py
-```
-
-### 🧪 Running Tests
-```sh
-pytest
-```
-
----
-
-
-## 🗺 Roadmap
-
-> - [X] `ℹ️  Task 1: Implement X`
-> - [ ] `ℹ️  Task 2: Refactor Y`
-> - [ ] `ℹ️ ...`
-
-
----
+Ensure that the contact data is stored in the `/data/repertoire.json` file. You can replace this file with your own data or modify its contents as needed in `utils.py`.
 
 ## 🤝 Contributing
 
-Contributions are always welcome! Please follow these steps:
-1. Fork the project repository. This creates a copy of the project on your account that you can modify without affecting the original project.
-2. Clone the forked repository to your local machine using a Git client like Git or GitHub Desktop.
-3. Create a new branch with a descriptive name (e.g., `new-feature-branch` or `bugfix-issue-123`).
-```sh
-git checkout -b new-feature-branch
-```
-4. Make changes to the project's codebase.
-5. Commit your changes to your local branch with a clear commit message that explains the changes you've made.
-```sh
-git commit -m 'Implemented new feature.'
-```
-6. Push your changes to your forked repository on GitHub using the following command
-```sh
-git push origin new-feature-branch
-```
-7. Create a new pull request to the original project repository. In the pull request, describe the changes you've made and why they're necessary.
-The project maintainers will review your changes and provide feedback or merge them into the main branch.
+Contributions to this project are welcome! If you have any improvements or feature suggestions, feel free to fork the repository and submit a pull request.
 
 ---
 
-## 📄 License
+# Système de Gestion de Contacts
 
-This project is licensed under the `ℹ️  INSERT-LICENSE-TYPE` License. See the [LICENSE](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) file for additional info.
+You don't speak english? French translation [here](#système-de-gestion-de-contacts).
 
----
+Ce projet contient un ensemble de scripts Python pour la gestion d'un répertoire de contacts. Ces scripts offrent diverses fonctionnalités pour ajouter, rechercher, afficher et copier des informations de contact. Le répertoire est stocké sous forme d'un fichier JSON, et vous pouvez interagir avec à l'aide d'une application avec interface graphique (GUI) et d'une application en mode console.
 
-## 👏 Acknowledgments
+## 🖥️ Scripts
 
-> - `ℹ️  List any resources, contributors, inspiration, etc.`
+### `main.py`
 
----
+- Ce script crée une application GUI pour la gestion des contacts. Il vous permet de rechercher des contacts, d'en voir les détails, de copier des numéros de téléphone, d'ajouter de nouveaux contacts et d'en supprimer.
+
+### `consoleApp.py`
+
+- Ce script offre une interface en mode console pour la gestion des contacts. Vous pouvez effectuer des actions telles que l'ajout de contacts, la recherche de contacts, l'affichage de l'ensemble du répertoire et la copie de numéros de téléphone.
+
+### `generator.py`
+
+- Utilisez ce script pour générer des données de contact aléatoires à des fins de test. Il remplit le répertoire de contacts avec des noms et des numéros de téléphone aléatoires, vous permettant ainsi de tester la fonctionnalité des autres scripts.
+
+### `utils.py`
+
+- Ce module contient des fonctions utilitaires utilisées par les autres scripts, notamment des fonctions pour charger et sauvegarder des données de contact, formater des numéros de téléphone, et plus encore.
+
+### `/data/repertoire.json`
+
+- Ce fichier JSON représente le répertoire de contacts et contient des données de contact d'exemple. Vous pouvez remplacer ce fichier par vos propres données ou l'utiliser comme point de départ pour la gestion de vos contacts.
+
+## 🏁 Mise en route
+
+Pour utiliser ces scripts, suivez ces étapes :
+
+1. Assurez-vous d'avoir Python (au moins la version 3.8) installée sur votre système. Vous pouvez le télécharger depuis [le site officiel de Python](https://www.python.org/downloads/).
+
+2. Installez les packages Python requis en exécutant la commande suivante dans votre terminal :
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Clonez ou téléchargez ce dépôt sur votre machine.
+
+4. Exécutez les scripts en fonction de vos préférences :
+
+   - Si vous préférez une interface graphique, exécutez `main.py` pour ouvrir l'application GUI.
+
+   - Si vous préférez une interface en mode console, exécutez `consoleApp.py` pour interagir avec les contacts à l'aide de commandes texte.
+
+   - Vous pouvez également utiliser `generator.py` pour remplir le répertoire de contacts avec des données aléatoires.
+
+## ⚠️ Notes Importantes
+
+Assurez-vous que les données de contact sont stockées dans le fichier `/data/repertoire.json`. Vous pouvez remplacer ce fichier par vos propres données ou modifier son contenu selon vos besoins dans `utils.py`.
+
+## 🤝 Contribution
+
+Les contributions à ce projet sont les bienvenues ! Si vous avez des améliorations ou des suggestions de fonctionnalités, n'hésitez pas à créer une branche du dépôt (fork) et à soumettre une demande de fusion (pull request).

@@ -1,6 +1,6 @@
 from prettytable import PrettyTable
 import pyperclip
-from apps.ressources import writeJsonFile, loadJsonFile, interToFrench, frenchToInter
+from utils import writeJsonFile, loadJsonFile, interToFrench, frenchToInter
 
 def choice():
     question = """

@@ -1,6 +1,6 @@
 from PySide6 import QtGui, QtWidgets
 import pyperclip
-from ressources import *
+from utils import *
 
 class App(QtWidgets.QWidget):
     def __init__(self):
