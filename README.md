@@ -1,4 +1,4 @@
-# Contacts Management System
+# Contacts Manager
 
 Vous ne parlez pas anglais ? La traduction en français se trouve [ici](#système-de-gestion-de-contacts).
 
@@ -58,7 +58,7 @@ Contributions to this project are welcome! If you have any improvements or featu
 
 ---
 
-# Système de Gestion de Contacts
+# Gestionnaire de Contacts
 
 You don't speak french? English translation [here](#contacts-management-system).
 
