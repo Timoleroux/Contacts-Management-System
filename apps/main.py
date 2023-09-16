@@ -77,15 +77,17 @@ class App(QtWidgets.QWidget):
         if name in database.keys():
             raise(TypeError("You can't create the same two contacts"))
 
-        phone_num = QtWidgets.QInputDialog.getText(self, ' ', 'Entez le numéro de télépone (format international) :')[0]
-        if not (phone_num[0] == "+" and phone_num[1:].isdigit()) :
+        num = QtWidgets.QInputDialog.getText(self, ' ', 'Entez le numéro de télépone (format international) :')[0]
+        if not (num[0] == "+" and num[1:].isdigit()) :
             raise(TypeError("The phone number must be in international format and contain only digits"))
 
         # Set new key to increment by 1, otherwise key is set to 0
         i = int(list(database.keys())[-1]) if len(database.keys()) != 0 else -1
-        database[str(i+1)] = [name, phone_num]
+        database[str(i+1)] = [name, num]
         writeJsonFile(database)
         self.loadDatabase()
+        self.lw_names_list.setCurrentItem(self.lw_names_list.item(self.lw_names_list.count() - 1))
+        self.lbl_num.setText(num)
     
     def search(self):
         "Searches for a matching string in the database."
@@ -96,19 +98,21 @@ class App(QtWidgets.QWidget):
             self.loadDatabase()
             return None
 
-        database = loadJsonFile()
+        db = loadJsonFile()
         search_result = []
 
         # If the list `items` which contains :
         if items := [
                 # Creates a list of tuples containing the name and phone number ONLY if the following condition is True
-                (database[key][0], database[key][1]) for key in database.keys()
-                # If `query` matches a name OR a phone number
-                if query.lower() in database[key][0].lower() or query in database[key][1]
+                (db[key][0], db[key][1]) for key in db.keys()
+                # If `query` matches a name
+                if query.lower().replace(" ", "") in db[key][0].lower().replace(" ", "") 
+                # OR a phone number
+                or query.replace(" ", "") in db[key][1] or query.replace(" ", "") in interToFrench(db[key][1])
             ]:
             search_result = [item[0] for item in items] # gets all the names that match the query
 
-        # If there is more than one result, they are displayed in `lw_names_list`
+        # If there is at least one result, it/they is/are displayed in `lw_names_list`
         self.lw_names_list.clear()
         if search_result:
             for item in search_result:

@@ -95,7 +95,6 @@ def copy():
             print(f"Le numéro de téléphone de {name} ({database[key][1]}) a été copié !")
             return None
     print(f"Aucun numéro n'a été trouvé pour {name}")
-    return None
 
 if __name__ == "__main__":
     user_choice = -1
