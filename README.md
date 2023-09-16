@@ -60,7 +60,7 @@ Contributions to this project are welcome! If you have any improvements or featu
 
 # Système de Gestion de Contacts
 
-You don't speak english? French translation [here](#contacts-management-system).
+You don't speak french? English translation [here](#contacts-management-system).
 
 Ce projet contient un ensemble de scripts Python pour la gestion d'un répertoire de contacts. Ces scripts offrent diverses fonctionnalités pour ajouter, rechercher, afficher et copier des informations de contact. Le répertoire est stocké sous forme d'un fichier JSON, et vous pouvez interagir avec à l'aide d'une application avec interface graphique (GUI) et d'une application en mode console.
 
