@@ -6,19 +6,19 @@ This repository contains a set of Python scripts for managing a directory of con
 
 ## 🖥️ Scripts
 
-### `main.py`
+### `Python/main.py`
 
 - This script creates a GUI application for managing contacts. It allows you to search for contacts, view contact details, copy phone numbers, add new contacts, and delete existing contacts.
 
-### `consoleApp.py`
+### `Python/consoleApp.py`
 
 - This script offers a console-based interface for managing contacts. You can perform actions such as adding contacts, searching for contacts, displaying the entire directory, and copying phone numbers.
 
-### `generator.py`
+### `Python/generator.py`
 
 - Use this script to generate random contact data for testing purposes. It populates the contact directory with random names and phone numbers, allowing you to test the functionality of the other scripts.
 
-### `utils.py`
+### `Python/utils.py`
 
 - This module contains utility functions used by the other scripts, including functions for loading and saving contact data, formatting phone numbers, and more.
 
@@ -66,19 +66,19 @@ Ce projet contient un ensemble de scripts Python pour la gestion d'un répertoir
 
 ## 🖥️ Scripts
 
-### `main.py`
+### `Python/main.py`
 
 - Ce script crée une application GUI pour la gestion des contacts. Il vous permet de rechercher des contacts, d'en voir les détails, de copier des numéros de téléphone, d'ajouter de nouveaux contacts et d'en supprimer.
 
-### `consoleApp.py`
+### `Python/consoleApp.py`
 
 - Ce script offre une interface en mode console pour la gestion des contacts. Vous pouvez effectuer des actions telles que l'ajout de contacts, la recherche de contacts, l'affichage de l'ensemble du répertoire et la copie de numéros de téléphone.
 
-### `generator.py`
+### `Python/generator.py`
 
 - Utilisez ce script pour générer des données de contact aléatoires à des fins de test. Il remplit le répertoire de contacts avec des noms et des numéros de téléphone aléatoires, vous permettant ainsi de tester la fonctionnalité des autres scripts.
 
-### `utils.py`
+### `Python/utils.py`
 
 - Ce module contient des fonctions utilitaires utilisées par les autres scripts, notamment des fonctions pour charger et sauvegarder des données de contact, formater des numéros de téléphone, et plus encore.
 
