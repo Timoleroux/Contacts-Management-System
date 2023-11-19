@@ -50,7 +50,7 @@ To use these scripts, follow these steps:
 
 ## ⚠️ Important Notes
 
-Ensure that the contact data is stored in the `/data/repertoire.json` file. You can replace this file with your own data or modify its contents as needed in `utils.py`.
+Ensure that the contact data is stored in the `/data/repertoire.json` file. You can replace this file with your own data or modify its contents as needed.
 
 ## 🤝 Contributing
 
@@ -110,7 +110,7 @@ Pour utiliser ces scripts, suivez ces étapes :
 
 ## ⚠️ Notes Importantes
 
-Assurez-vous que les données de contact sont stockées dans le fichier `/data/repertoire.json`. Vous pouvez remplacer ce fichier par vos propres données ou modifier son contenu selon vos besoins dans `utils.py`.
+Assurez-vous que les données de contact sont stockées dans le fichier `/data/repertoire.json`. Vous pouvez remplacer ce fichier par vos propres données ou modifier son contenu selon vos besoins.
 
 ## 🤝 Contribution
 
